@@ -22,4 +22,9 @@ backendHost : String="http://localhost:8085";
     return this.http.post<Customer>(this.backendHost+"/customers",customer);
 
   }
+
+  public deleteCustomer(id:number) {
+    return this.http.delete(this.backendHost+"/customers/"+id);
+
+  }
 }

@@ -26,12 +26,12 @@
             <td>{{c.name}}</td>
             <td>{{c.email}}</td>
             <td>
-              <button class="btn btn-danger">
+              <button (click)="handleDeleteCustomer(c)" class="btn btn-danger">
                 <i class="bi bi-trash"></i>
               </button>
             </td>
             <td>
-              <button class="btn btn-success">
+              <button  class="btn btn-success">
                 Accounts
               </button>
             </td>
