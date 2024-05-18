@@ -54,10 +54,10 @@
       </div>
     </div>
     <div class="col col-md-6">
-      <div class="card" >
+      <div class="card" *ngIf="accountObservable" >
         <div class="card-header">Operations</div>
-        <div class="card-body">
-
+        <div class="card-body" *ngIf="authService.roles.includes('ADMIN')">
+          {{operationFormGroup.value | json}}
           <form [formGroup]="operationFormGroup" (ngSubmit)="handleAccountOperation()" method="post">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" formControlName="operationType" value="DEBIT">
@@ -71,7 +71,7 @@
               <input class="form-check-input" type="radio" formControlName="operationType" value="TRANSFER">
               <label class="form-check-label">TRANSFER:</label>
             </div>
-           <!-- <div class="mb-3" *ngIf="operationFormGroup.value.operationType=='TRANSFER'">
+            <div class="mb-3" *ngIf="operationFormGroup.value.operationType=='TRANSFER'">
               <label class="form-label">Account Destination :</label>
               <input type="text" formControlName="accountDestination" class="form-control">
             </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="d-grid mb-3">
               <button class="btn btn-success">Save Operation</button>
-            </div>-->
+            </div>
           </form>
         </div>
       </div>

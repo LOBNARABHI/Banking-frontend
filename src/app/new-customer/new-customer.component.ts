@@ -28,7 +28,7 @@ constructor(private fb : FormBuilder, private customerService:CustomerService, p
       next : data=>{
         alert("Customer has been successfully saved!");
         //this.newCustomerFormGroup.reset();
-        this.router.navigateByUrl("/customers");
+        this.router.navigateByUrl("/admin/customers");
       },
       error : err => {
         console.log(err);
